@@ -2,13 +2,11 @@
 using System;
 namespace aspnetserver.Data
 {
-	public class AppDBContext
-	{
-		public AppDBContext()
-		{
-			public Microsoft.EntityFrameworkCore.DbSet<Post> Posts { get; set; }
-			protected override void OnConfiguring(DbContext)
-		}
-	}
+    internal sealed class AppDBContext : DbContext
+    {
+        public DbSet<Post> Posts { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) => dbContextOptionsBuilder.UseSqlite("");
+    }
 }
 
