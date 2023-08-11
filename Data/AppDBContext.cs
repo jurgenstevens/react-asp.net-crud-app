@@ -10,6 +10,10 @@ namespace aspnetserver.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Post>(entity =>
+            {
+                entity.Property(p => p.Content).HasColumnType("TEXT");
+            });
             Post[] postsToSeed = new Post[6];
 
             for (int i = 1; i <= 6; i++)
