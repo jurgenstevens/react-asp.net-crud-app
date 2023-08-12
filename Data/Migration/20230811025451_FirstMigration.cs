@@ -4,10 +4,10 @@
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace aspnetserver.Data.Migration
+namespace aspnetserver.Data.MigrationScripts
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class FirstMigration : MigrationCommand
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
